@@ -14,11 +14,8 @@ engine = create_engine(f'mysql+pymysql://root:{password}@localhost:3306/airbnbau
 
 # Query All Records in the the Database
 data = engine.execute("SELECT * FROM finalairbnba_data")
-geodata = engine.execute("SELECT * FROM airbnbageojson_data")
-
 df = pd.read_sql("SELECT * FROM finalairbnba_data", con=engine)
 
-geo_df = pd.read_sql("SELECT * FROM airbnbageojson_data", con=engine)
 #print(geo_df)
 #################################################
 # Flask Setup
